@@ -2,17 +2,6 @@ Import instructions for WSL2
 ============================
 
 
-### Image preparation
-```
-PS> podman pull ghcr.io/gbraad-devenv/fedora/systemd:38 
-PS> podman run --name devenv-systemd ghcr.io/gbraad-devenv/fedora/systemd:38 echo
-PS> podman export devenv-systemd -o devenv-systemd.tar
-PS> podman rm devenv-systemd
-```
-
-Note: do not use `save` as this preserves layers and will cause the import to fail (be incomplete).
-
-
 ### Image import
 ```
 PS> wsl --import devsys c:\Users\gbraad\devsys .\devenv-systemd.tar
