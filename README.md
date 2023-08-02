@@ -26,6 +26,8 @@ CONTAINER ID  IMAGE       COMMAND     CREATED     STATUS      PORTS       NAMES
 PS> podman system connection add devuser ssh://gbraad@localhost/run/user/1000/podman/podman.sock --identity c:\Users\gbraad\.ssh\id_rsa
 PS> podman system connection add devroot ssh://root@localhost/run/podman/podman.sock --identity c:\Users\gbraad\.ssh\id_rsa
 PS> podman -c devuser ps -a
+PS> podman system connection default devuser
+PS> podman ps -a
 ```
 
 Note: to deal with Podman machine, see: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/15190#issuecomment-1661548692)
