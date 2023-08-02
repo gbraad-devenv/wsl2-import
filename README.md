@@ -19,3 +19,11 @@ $ podman ps
 WARN[0002] "/" is not a shared mount, this could cause issues or missing mounts w
 CONTAINER ID  IMAGE       COMMAND     CREATED     STATUS      PORTS       NAMES
 ```
+
+### Set up Podman from host
+
+```
+PS> podman system connection add devuser ssh://gbraad@localhost/run/user/1000/podman/podman.sock --identity c:\Users\gbraad\.ssh\id_rsa
+PS> podman system connection add devroot ssh://root@localhost/run/podman/podman.sock --identity c:\Users\gbraad\.ssh\id_rsa
+PS> podman -c devuser ps -a
+```
