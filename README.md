@@ -31,3 +31,4 @@ PS> podman ps -a
 ```
 
 Note: to deal with Podman machine, see: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/15190#issuecomment-1661548692)
+Note 2: you might want to enable linger `loginctl enable-linger gbraad` for the WSL2 environment.
