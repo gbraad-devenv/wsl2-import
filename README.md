@@ -8,7 +8,7 @@ PS> wsl --import devsys c:\Users\gbraad\devsys .\devenv-systemd.tar
 PS> wsl --set-default devsys
 PS> wsl exec echo -e "[user]\ndefault=gbraad\n[boot]\nsystemd=true" > /etc/wsl.conf
 PS> wsl --terminate devsys
-PS> wsl
+PS> wsl     #     this will start with systemd enabled
 ```
 
 ### Fixes
