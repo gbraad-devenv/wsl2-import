@@ -29,6 +29,22 @@ PS> podman -c devuser ps -a
 PS> podman system connection default devuser
 PS> podman ps -a
 ```
+Note: you might want to enable linger `` for the WSL2 environment.
 
-Note: to deal with Podman machine, see: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/15190#issuecomment-1661548692)
-Note 2: you might want to enable linger `loginctl enable-linger gbraad` for the WSL2 environment.
+
+#### Podman machine
+
+See: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/15190#issuecomment-1661548692)
+
+```
+PS> podman machine start
+PS> podman machine ssh
+$ touch /mnt/wsl/podman.sock
+$ sudo mount --bind /var/run/user/1000/podman/podman.sock /mnt/wsl/podman.sock
+$ exit
+```
+
+```
+PS> wsl
+$ podman --remote --url unix:///mnt/wsl/podman.sock ps -a
+```
