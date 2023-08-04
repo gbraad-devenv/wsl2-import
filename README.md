@@ -31,7 +31,7 @@ PS> podman -c devuser ps -a
 PS> podman system connection default devuser
 PS> podman ps -a
 ```
-Note: you might want to enable linger `` for the WSL2 environment.
+Note: you might want to `loginctl enable-linger gbraad` for the WSL2 environment.
 
 
 #### Share Podman machine
