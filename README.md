@@ -38,7 +38,7 @@ See: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/1
 
 ```
 PS> podman machine start
-PS> podman machine ssh
+PS> podman machine ssh    #   or   wsl -d podman-default-machine
 $ touch /mnt/wsl/podman.sock
 $ sudo mount --bind /var/run/user/1000/podman/podman.sock /mnt/wsl/podman.sock
 $ exit
