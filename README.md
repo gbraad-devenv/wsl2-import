@@ -11,7 +11,9 @@ PS> wsl --terminate devsys
 PS> wsl     #     this will start with systemd enabled
 ```
 
-### Fixes
+### Podman 
+
+#### Fixes
 ```
 $ sudo dnf install -y podman
 $ sudo rpm --restore shadow-utils
@@ -20,7 +22,7 @@ WARN[0002] "/" is not a shared mount, this could cause issues or missing mounts 
 CONTAINER ID  IMAGE       COMMAND     CREATED     STATUS      PORTS       NAMES
 ```
 
-### Set up Podman from host
+#### Access from host
 
 ```
 PS> podman system connection add devuser ssh://gbraad@localhost/run/user/1000/podman/podman.sock --identity c:\Users\gbraad\.ssh\id_rsa
@@ -32,7 +34,7 @@ PS> podman ps -a
 Note: you might want to enable linger `` for the WSL2 environment.
 
 
-#### Podman machine
+#### Share Podman machine
 
 See: [share `podman.sock` on WSL2](https://github.com/containers/podman/issues/15190#issuecomment-1661548692)
 
